@@ -1,15 +1,52 @@
-<div class="w-full flex justify-center">
-  <form
-    class="w-[1200px] flex justify-center align-middle items-center flex-col"
-  >
-    <app-form-input label="Item Name" inputType="text"></app-form-input>
-    <app-form-input label="Item Description" inputType="text"></app-form-input>
-    <app-form-input label="Price" inputType="text"></app-form-input>
-    <app-form-input label="Total Items" inputType="number"></app-form-input>
+<div class="w-full flex flex-col items-center">
+  <p *ngIf="errorMsg !== ''" class="text-red-500 mt-5">{{ errorMsg }}</p>
+  <div class="w-[1200px] flex items-center flex-col mt-8">
+    <!-- <app-form-input
+      name="name"
+      label="Item Name"
+      inputType="text"
+    ></app-form-input> -->
+    <!-- <app-form-input
+      name="price"
+      label="Price"
+      inputType="number"
+    ></app-form-input>
+    <app-form-input
+      name="unit"
+      label="Total Items"
+      inputType="number"
+    ></app-form-input> -->
+
+    <div class="flex flex-col mt-3 w-[800px]">
+      <label>Name</label>
+      <input
+        type="text"
+        class="bg-pink-50 rounded-lg border border-pink-100 text-sm my-2 py-2 w-full"
+        [(ngModel)]="nameField"
+      />
+    </div>
+    <div class="flex flex-col mt-3 w-[800px]">
+      <label>Price</label>
+      <input
+        type="text"
+        class="bg-pink-50 rounded-lg border border-pink-100 text-sm my-2 py-2 w-full"
+        [(ngModel)]="priceField"
+      />
+    </div>
+    <div class="flex flex-col mt-3 w-[800px]">
+      <label>Total</label>
+      <input
+        type="number"
+        class="bg-pink-50 rounded-lg border border-pink-100 text-sm my-2 py-2 w-full"
+        [(ngModel)]="unitField"
+      />
+    </div>
+
     <app-primary-button
       buttonType="submit"
       value="submit"
       class="mt-5"
+      (click)="onFormSubmit()"
     ></app-primary-button>
-  </form>
+  </div>
 </div>
