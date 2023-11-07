@@ -7,6 +7,7 @@ import { InputFormComponent } from './component/input-form/input-form.component'
 import { FormInputComponent } from './component/input/form-input/form-input.component';
 import { PrimaryButtonComponent } from './component/button/primary-button/primary-button.component';
 import { FormsModule } from '@angular/forms';
+import { DropdownComponent } from './component/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { FormsModule } from '@angular/forms';
     InputFormComponent,
     FormInputComponent,
     PrimaryButtonComponent,
+    DropdownComponent,
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],

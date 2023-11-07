@@ -1,0 +1,13 @@
+<div class="w-full flex flex-col items-center mt-5">
+  <button
+    class="text-white bg-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center"
+    type="button"
+    (click)="getCategories()"
+  >
+    Categories
+  </button>
+
+  <div class="bg-slate-200 flex flex-col p-5" *ngIf="isCategoryShown">
+    <p *ngFor="let item of categories">{{ categories }}</p>
+  </div>
+</div>
