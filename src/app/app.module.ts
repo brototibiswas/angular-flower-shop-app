@@ -8,6 +8,8 @@ import { FormInputComponent } from './component/input/form-input/form-input.comp
 import { PrimaryButtonComponent } from './component/button/primary-button/primary-button.component';
 import { FormsModule } from '@angular/forms';
 import { DropdownComponent } from './component/dropdown/dropdown.component';
+import { ItemCardComponent } from './component/item-card/item-card.component';
+import { SearchPageComponent } from './screens/search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { DropdownComponent } from './component/dropdown/dropdown.component';
     FormInputComponent,
     PrimaryButtonComponent,
     DropdownComponent,
+    ItemCardComponent,
+    SearchPageComponent,
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],

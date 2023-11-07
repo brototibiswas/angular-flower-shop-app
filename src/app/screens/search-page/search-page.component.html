@@ -1,0 +1,50 @@
+<div class="flex flex-col w-full justify-center self-center gap-5">
+  <div>
+    <ul class="w-full flex justify-center gap-3">
+      <li
+        class="rounded-lg bg-gray-200 py-4 px-6 hover:bg-gray-300 cursor-pointer"
+        (click)="showCards('flowers')"
+      >
+        Flowers
+      </li>
+      <li
+        class="rounded-lg bg-gray-200 py-4 px-6 hover:bg-gray-300 cursor-pointer"
+        (click)="showCards('candles')"
+      >
+        Candles
+      </li>
+    </ul>
+  </div>
+
+  <div
+    class="w-full flex justify-center gap-4"
+    *ngIf="currentView === 'flowers'"
+  >
+    <app-item-card
+      imgSource="https://i.pinimg.com/564x/f2/55/e5/f255e5f0f88e30733291fe998227cdb1.jpg"
+      name="Hibiscus"
+      price="$2"
+    ></app-item-card>
+    <app-item-card
+      imgSource="https://i.pinimg.com/564x/f2/55/e5/f255e5f0f88e30733291fe998227cdb1.jpg"
+      name="Hibiscus"
+      price="$2"
+    ></app-item-card>
+  </div>
+
+  <div
+    class="w-full flex justify-center gap-4"
+    *ngIf="currentView === 'candles'"
+  >
+    <app-item-card
+      imgSource="https://i.pinimg.com/564x/7f/a1/a3/7fa1a388d83a1cebce24f4223b96af82.jpg"
+      name="Lavendar Candle"
+      price="$10"
+    ></app-item-card>
+    <app-item-card
+      imgSource="https://i.pinimg.com/564x/7f/a1/a3/7fa1a388d83a1cebce24f4223b96af82.jpg"
+      name="Lavendar Candle"
+      price="$10"
+    ></app-item-card>
+  </div>
+</div>
