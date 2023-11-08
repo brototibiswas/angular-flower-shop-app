@@ -17,34 +17,28 @@
   </div>
 
   <div
-    class="w-full flex justify-center gap-4"
+    class="flex w-full justify-center gap-4"
     *ngIf="currentView === 'flowers'"
   >
-    <app-item-card
-      imgSource="https://i.pinimg.com/564x/f2/55/e5/f255e5f0f88e30733291fe998227cdb1.jpg"
-      name="Hibiscus"
-      price="$2"
-    ></app-item-card>
-    <app-item-card
-      imgSource="https://i.pinimg.com/564x/f2/55/e5/f255e5f0f88e30733291fe998227cdb1.jpg"
-      name="Hibiscus"
-      price="$2"
-    ></app-item-card>
+    <div *ngFor="let item of products">
+      <app-item-card
+        [imgSource]="item.link"
+        [name]="item.name"
+        [price]="item.price"
+      ></app-item-card>
+    </div>
   </div>
 
   <div
-    class="w-full flex justify-center gap-4"
+    class="flex w-full justify-center gap-4"
     *ngIf="currentView === 'candles'"
   >
-    <app-item-card
-      imgSource="https://i.pinimg.com/564x/7f/a1/a3/7fa1a388d83a1cebce24f4223b96af82.jpg"
-      name="Lavendar Candle"
-      price="$10"
-    ></app-item-card>
-    <app-item-card
-      imgSource="https://i.pinimg.com/564x/7f/a1/a3/7fa1a388d83a1cebce24f4223b96af82.jpg"
-      name="Lavendar Candle"
-      price="$10"
-    ></app-item-card>
+    <div *ngFor="let item of products">
+      <app-item-card
+        [imgSource]="item.link"
+        [name]="item.name"
+        [price]="item.price"
+      ></app-item-card>
+    </div>
   </div>
 </div>
