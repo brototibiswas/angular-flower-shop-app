@@ -13,32 +13,63 @@
       >
         Candles
       </li>
+      <li
+        class="rounded-lg bg-gray-200 py-4 px-6 hover:bg-gray-300 cursor-pointer"
+        (click)="showCards('all')"
+      >
+        All
+      </li>
     </ul>
   </div>
 
-  <div
-    class="flex w-full justify-center gap-4"
-    *ngIf="currentView === 'flowers'"
-  >
-    <div *ngFor="let item of products">
-      <app-item-card
-        [imgSource]="item.link"
-        [name]="item.name"
-        [price]="item.price"
-      ></app-item-card>
+  <div *ngIf="currentView === 'flowers'">
+    <div
+      class="flex w-full justify-center gap-4"
+      *ngIf="products.length > 0; else noProductsTemplate"
+    >
+      <div *ngFor="let item of products">
+        <app-item-card
+          [imgSource]="item.link"
+          [name]="item.name"
+          [price]="item.price"
+        ></app-item-card>
+      </div>
     </div>
   </div>
 
-  <div
-    class="flex w-full justify-center gap-4"
-    *ngIf="currentView === 'candles'"
-  >
-    <div *ngFor="let item of products">
-      <app-item-card
-        [imgSource]="item.link"
-        [name]="item.name"
-        [price]="item.price"
-      ></app-item-card>
+  <div *ngIf="currentView === 'candles'">
+    <div
+      class="flex w-full justify-center gap-4"
+      *ngIf="products.length > 0; else noProductsTemplate"
+    >
+      <div *ngFor="let item of products">
+        <app-item-card
+          [imgSource]="item.link"
+          [name]="item.name"
+          [price]="item.price"
+        ></app-item-card>
+      </div>
     </div>
   </div>
+
+  <div *ngIf="currentView === 'all'">
+    <div
+      class="flex w-full justify-center gap-4"
+      *ngIf="products.length > 0; else noProductsTemplate"
+    >
+      <div *ngFor="let item of products">
+        <app-item-card
+          [imgSource]="item.link"
+          [name]="item.name"
+          [price]="item.price"
+        ></app-item-card>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noProductsTemplate>
+    <div class="flex w-full justify-center items-center">
+      <p>No items found</p>
+    </div>
+  </ng-template>
 </div>

@@ -22,7 +22,7 @@ export class SearchPageComponent {
         case 'candles':
           this.products = await lastValueFrom(
             this.http.get<Product[]>(
-              'http://localhost:3000/products/getCandles'
+              'http://localhost:3000/products/category/candle'
             )
           );
           console.log('candles:', this.products);
@@ -30,10 +30,15 @@ export class SearchPageComponent {
         case 'flowers':
           this.products = await lastValueFrom(
             this.http.get<Product[]>(
-              'http://localhost:3000/products/getFlowers'
+              'http://localhost:3000/products/category/flower'
             )
           );
           console.log('candles:', this.products);
+          break;
+        case 'all':
+          this.products = await lastValueFrom(
+            this.http.get<Product[]>('http://localhost:3000/products/category')
+          );
           break;
       }
     } catch (error) {
@@ -47,7 +52,7 @@ export class SearchPageComponent {
   }
 }
 
-type Category = 'flowers' | 'candles';
+type Category = 'flowers' | 'candles' | 'all';
 
 type Product = {
   name: string;
